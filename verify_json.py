@@ -16,8 +16,6 @@ def verifyJson(jsonFile):
                     if resource:
                         if resource == '*':
                             return False
-                        else:
-                            return True
                     else:
                         raise JSONParsingException("No Resource found")
             else:
@@ -29,6 +27,8 @@ def verifyJson(jsonFile):
         return f"JSON decoding error: {str(error)}"
     except JSONParsingException as error:
         return f"JSON parsing error: {str(error)}"
+    
+    return True
 
 if __name__ == '__main__':
     filename = input("Input path to the tested file:\n")
