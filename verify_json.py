@@ -11,8 +11,8 @@ def verifyJson(jsonFile):
             jsonData = json.load(file)
             statements = jsonData.get('PolicyDocument', {}).get('Statement', [])
             if statements:
-                for statement in statements:
-                    resource = statement.get('Resource')
+                if statements.__len__() == 1:
+                    resource = statements[0].get('Resource')
                     if resource:
                         if resource == '*':
                             return False

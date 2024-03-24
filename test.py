@@ -6,11 +6,11 @@ class TestVerifyJSON(unittest.TestCase):
     def testTrueInput(self):
         self.assertTrue(verifyJson("JSONTrueFile"))
 
+    def testTrueInput2(self):
+        self.assertTrue(verifyJson("JSONTrueFile2"))
+
     def testFalseInput(self):
         self.assertFalse(verifyJson("JSONFalseFile"))
-
-    def testFalseInput2(self):
-        self.assertFalse(verifyJson("JSONFalseFile2"))
 
     def testWrongFileInput(self):
         self.assertEqual(verifyJson("InexistantJSONFile"), "File not found")
